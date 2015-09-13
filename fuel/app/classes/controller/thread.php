@@ -14,7 +14,7 @@ class Controller_Thread extends Controller_Template
 	{
 		is_null($id) and Response::redirect('thread');
 
-		if ( ! $data['thread'] = Model_Thread::find($id))
+		if ( ! $data['thread'] = Model_Thread::find($id, ['related' =>['comments']]))
 		{
 			Session::set_flash('error', 'Could not find thread #'.$id);
 			Response::redirect('thread');

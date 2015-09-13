@@ -6,6 +6,13 @@
 <p>
 	<strong>Body:</strong>
 	<?php echo $thread->body; ?></p>
+<p>
+	<h3>Comments</h3>
+	<?php foreach($thread->comments as $index => $comment ) { ?>
+		<p><?php echo $comment->body ?></p>
+	<?php } ?>
+
+</p>
 
 <?php echo Html::anchor('thread/edit/'.$thread->id, 'Edit'); ?> |
 <?php echo Html::anchor('thread', 'Back'); ?>

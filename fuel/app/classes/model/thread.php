@@ -22,6 +22,8 @@ class Model_Thread extends Model
 		),
 	);
 
+	protected static $_has_many = ['comments'];
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
